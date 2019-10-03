@@ -83,4 +83,10 @@ In my code I am reading the contents from a file called js.txt which i have not 
 
 I have left the second API call for you to modify and fix yourself to pull back the joke required. 
 
+
+When you are ready to test and run your app, just enter into command line: 
+
+`npm start`
+
+
 **Good luck!!**
