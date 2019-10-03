@@ -31,3 +31,18 @@ You will then go into your slack workspace - which looks like a chat window. You
 Go to [https://api.slack.com/apps](https://api.slack.com/apps) and give the bot a name, and select your workspace name from the dropdown. 
 
 From the `basic information` tab on the left hand side, we then select `bots` followed by `add bot user`
+
+![online](images/online.png)
+
+Keep the `always show bot as online` selected off. This means it will only come online once your server is running. 
+
+Make change and select save changes. 
+
+![features](images/features.png)
+
+Notice features should now be ticked. 
+
+Next step is to select `install app to your workspace` below the features button.  Select authorize and you will notice it is also now ticked. 
+
+![features](images/info.png)
+Scroll down on the main page, add an avatar including a description 
