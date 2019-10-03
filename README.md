@@ -62,4 +62,13 @@ Lets add our dependencies - we need slackbot as mentioned above and also axios s
 npm i slackbots axios
 ```
 
+Lets ensure our app starts when we start the server by adding hte following snippet into `package.json` if you are unsure look at my example in the directory above. 
+
+```
+  "scripts": {
+    "start": "node index.js"
+  },
+```
+
+
 
