@@ -74,4 +74,13 @@ Lets ensure our app starts when we start the server by adding hte following snip
 ```
 
 
+Let's create our `index.js` file and you can modify from my example in this repo. The only major thing you need to remember is to get the token, you need to go to `OAuth and Permissions` tab on the left hand side of your bot creation page as shown below, then select `Bot User OAuth Access Token`
 
+![features](images/OAuth.png)
+
+In my code I am reading the contents from a file called js.txt which i have not included in this repo. 
+
+
+I have left the second API call for you to modify and fix yourself to pull back the joke required. 
+
+**Good luck!!**
