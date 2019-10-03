@@ -43,8 +43,12 @@ Make change and select save changes.
 Notice features should now be ticked. 
 
 Next step is to select `install app to your workspace` below the features button.  Select authorize and you will notice it is also now ticked. 
+<br>
 
 ![features](images/info.png)
+<br>
+<br>
+
 Scroll down on the main page, add an avatar including a description 
 
 # START YOUR PROJECT
