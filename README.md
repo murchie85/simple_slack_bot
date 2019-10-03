@@ -23,3 +23,11 @@ This lib is very easy and practical.
 ![workspace](images/ws.png)
 
 Go to [here](https://slack.com) to sign up, then once you have entered your email, select `create a new workspace` 
+
+You will then go into your slack workspace - which looks like a chat window. You have two workspaces, we want the bot to work in the general chanel. 
+
+## CREATE THE BOT
+
+Go to [https://api.slack.com/apps](https://api.slack.com/apps) and give the bot a name, and select your workspace name from the dropdown. 
+
+From the `basic information` tab on the left hand side, we then select `bots` followed by `add bot user`
