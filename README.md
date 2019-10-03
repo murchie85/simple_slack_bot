@@ -46,3 +46,20 @@ Next step is to select `install app to your workspace` below the features button
 
 ![features](images/info.png)
 Scroll down on the main page, add an avatar including a description 
+
+# START YOUR PROJECT
+
+Open up terminal or in my case VSCODE and work on shell from there and run : 
+
+
+`npm init`
+
+Give it a description, author, etc.
+
+Lets add our dependencies - we need slackbot as mentioned above and also axios so we can make api requests.
+
+```
+npm i slackbots axios
+```
+
+
