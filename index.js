@@ -13,8 +13,7 @@ const bot = new SlackBot({
 })
 
 
-// start handler 
-
+// startup process 
 bot.on('start', function() {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
     var params = {
@@ -22,32 +21,42 @@ bot.on('start', function() {
     };
     
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services 
+    console.log('starting service')
     bot.postMessageToChannel('general', 'howdy cunts!', params);
     
 });
 
 
-// Error handler 
 
+
+// Error handler 
 bot.on('error', (err) => console.log(err));
 
 
-// Message handler (response)
+
+
+// Check input type
 bot.on('message', (data) => {
     // data object has some properties on them type
     if(data.type !== 'message') {
         return;
     }
-   handleMessage(data.text); // call our function we make lower down
+
+// If input from user is a message - pass text to handlerMessage
+   handleMessage(data.text); 
 });
 
 
-// respond to data 
+// Message handler
 function handleMessage(message){
-    if(message.includes(' chucknorris')){
+    if(message.includes('give me a chuck joke')){
         chuckjoke(); // if text contains chuck norris, lets run our function chuckjoke
-    } else if(message.includes(' joke')){
+    } else if(message.includes('give me a joke')){
         hazjoke();
+    } else if(message.includes('give me a random joke')){
+        randomjoke();
+    } else if(message.includes(' help')){
+        runhelp(); 
     }
 }
 
@@ -63,18 +72,42 @@ function chuckjoke(){
             var params = {
                 icon_emoji: ':laughing:'
             };  
-            bot.postMessageToChannel('general', `Chuck Norris: ${joke}`, params);
+            bot.postMessageToChannel('general', `Chuck Norris Joke: ${joke}`, params);
         })
 }
 
 function hazjoke(){
-    axios.get('https://api.jokes.one/jod')
+    axios.get('https://official-joke-api.appspot.com/random_joke')
         .then(res =>{
             // no value object this time 
-            const joke = res.data.contents;
+            const setup = res.data.setup;
+            const pun = res.data.punchline;
+
             var params = {
                 icon_emoji: ':laughing:'
             };  
-            bot.postMessageToChannel('general', `Ihazjoke: ${joke}`, params);
+            bot.postMessageToChannel('general', `Here you go: ${setup} \n  ${pun}`, params);
         })
+}
+
+
+// tell a random joke
+
+function randomjoke(){
+    const rand = Math.floor(Math.random() * 2) + 1;
+    if(rand ===1){
+        chuckjoke();
+    }else if(rand ===2){
+        hazjoke();
+    }
+}
+
+// show help text
+
+function runhelp(){
+    var params = {
+        icon_emoji: ':question:'
+    };  
+    bot.postMessageToChannel('general', ` Type '@butler_bot give me a ' followed by one of the following choices \n  'chuck joke' \n  'joke' \n  'random joke' `, params);
+
 }
