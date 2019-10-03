@@ -46,8 +46,7 @@ Next step is to select `install app to your workspace` below the features button
 <br>
 
 ![features](images/info.png)
-<br>
-<br>
+<br><br>
 
 Scroll down on the main page, add an avatar including a description 
 
