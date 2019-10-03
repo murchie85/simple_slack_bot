@@ -1,9 +1,13 @@
 const SlackBot = require('slackbots');
 const axios =  require('axios');
 
+let fs = require('fs')
+let filename = "js.txt"
+let content = fs.readFileSync(process.cwd() + "/" + filename).toString()
+
 
 const bot = new SlackBot({
-    token: 'xoxb-767144417297-773622470229-IsSf8lN2MzybsRnY4TF7fmy2',
+    token: content,
     name: 'butler_bot'
 
 })
@@ -27,6 +31,7 @@ bot.on('start', function() {
 
 bot.on('error', (err) => console.log(err));
 
+
 // Message handler (response)
 bot.on('message', (data) => {
     // data object has some properties on them type
@@ -46,6 +51,8 @@ function handleMessage(message){
     }
 }
 
+
+
 // tell a chuck norris joke 
 // use an external api url 
 // returns a type,value object we need to dig into 
@@ -61,10 +68,10 @@ function chuckjoke(){
 }
 
 function hazjoke(){
-    axios.get('https://icanhazdadjoke.com')
+    axios.get('https://api.jokes.one/jod')
         .then(res =>{
             // no value object this time 
-            const joke = res.data;
+            const joke = res.data.contents;
             var params = {
                 icon_emoji: ':laughing:'
             };  
