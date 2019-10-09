@@ -22,7 +22,7 @@ bot.on('start', function() {
     
     // define channel, where bot exist. You can adjust it there https://my.slack.com/services 
     console.log('starting service')
-    bot.postMessageToChannel('general', 'howdy cunts!', params);
+    bot.postMessageToChannel('general', 'howdy gang!', params);
     
 });
 
